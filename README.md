@@ -9,6 +9,8 @@ This repository acts as a geometric generation verification substrate implementi
 
 The theoretical baseline is available via Zenodo DOI doi.org.
 
+Hedling, B. S. (2026). Meadow Pedagogy and Non-Linear Manifold Mechanics: An Explicit Geometric Control Alternative to Black-Box Transformers. Zenodo. https://doi.org/10.5281/zenodo.23851024 
+
 🟥 Context: The Prosthetic Isolation Mandate
 
 Unlike standard image diffusion models that project onto flat Euclidean arrays and suffer from structural drift over time, this engine uses deterministic curved manifolds and path-dependent transport connection forms to ensure lossless composition.
