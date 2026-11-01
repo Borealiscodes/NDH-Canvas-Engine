@@ -4,15 +4,17 @@ from ndh_canvas.canvas_core import NDHCanvasField
 from ndh_canvas.primitives import PaintingPrimitives
 from ndh_canvas.brush_presets import GeometricBrushPresets
 from ndh_canvas.exporter import NDHCanvasExporter
+from ndh_canvas.conservation import SymplecticConservationLoop
 
 def run_engine():
     """
     Unified execution harness for the NDH-Canvas-Engine.
-    Cycles through geometric brush presets and exports the verified manifold state.
+    Cycles through geometric brush presets and applies symplectic archiving operators.
     """
     print("🎨 [NDH-CANVAS] Initializing continuous manifold architecture...")
     canvas = NDHCanvasField(resolution=256, dimensions=80)
     primitives = PaintingPrimitives()
+    conservation_enclave = SymplecticConservationLoop(dimensions=80)
     
     # Define active brush profiles to cycle through sequentially
     brush_sequence = [
@@ -49,7 +51,11 @@ def run_engine():
             print(f"🚨 [CRITICAL] Structural asymmetry detected in brush profile: {name}")
             sys.exit(1)
             
-    # 5. Serialize and export the final canvas state vector snapshot to disk
+        # 5. Execute the Symplectic Conservation Loop step to stabilize manifold volume
+        print("    -> Stabilizing trajectory spectrum via SVD volume conservation...")
+        canvas.state_manifold = conservation_enclave.archive_active_surface(canvas.state_manifold)
+            
+    # 6. Serialize and export the final canvas state vector snapshot to disk
     output_filename = "ndh_canvas_snapshot.json"
     print(f"\n💾 [EXPORT] Writing stable state matrix to {output_filename}...")
     
