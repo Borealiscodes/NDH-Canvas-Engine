@@ -1,0 +1,20 @@
+# Volatile Python Runtime and Cache Containers
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Lean 4 / Lake Compilation Artifacts (Prevents 100% CPU loops)
+verification/lean/.lake/
+verification/lean/build/
+
+# Local Operating System Artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
