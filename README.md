@@ -1,38 +1,58 @@
-# 🎨 ENGINE STANDBY: CANVASES MAPPED & OPERATORS ACTIVE 🎨
+# 🏗️ RECONSTRUCTION UNDER WAY: INTERACTION GEOMETRY & ENGINE ACTIVE 🏗️
 
 
-🏗️ 🌈 NDH-Canvas-Engine
+🏗️ 🌈 NDH‑Canvas-Engine
 
-This repository serves as a functional, low-compute geometric generation verification substrate implementing the Non-Deterministic Hypergraph (NDH) Constitutional Ontology for structural canvas control. It translates the core interaction geometry invariants and the Five Primitives directly into local numerical array operators, ensuring absolute path-retention, structural continuity, and drift neutrality during creative generative execution loops.
+This repository acts as a geometric generation verification substrate implementing the Non-Deterministic Hypergraph (NDH) Constitutional Ontology for structural canvas control, translating interaction geometry invariants into numerical array operators.
 
-🟥 Context: Creative Sovereignty & Manifest Invariants
+📜 Primary Academic Reference
 
-Traditional generative art architectures and standard image diffusion models project visual tokens onto flat Euclidean arrays. Because their underlying transformer blocks operate with memoryless self-attention, they are vulnerable to continuous structural drift, breaking physical perspective, violating spatial boundaries, and dropping thematic coherence over extended runtime loops.
-This repository implements a structural alternative using deterministic curved manifolds and path-dependent transport connection forms to ensure precise composition and lossless edits.
+The theoretical baseline is available via Zenodo DOI doi.org.
+
+🟥 Context: The Prosthetic Isolation Mandate
+
+Unlike standard image diffusion models that project onto flat Euclidean arrays and suffer from structural drift over time, this engine uses deterministic curved manifolds and path-dependent transport connection forms to ensure lossless composition.
+
+🌾 Meadow Pedagogy & AI Interpretability Mechanics
+
+Traditional machine learning relies on brute-force scale, treating model weights as massive statistical black boxes. The NDH-Canvas-Engine provides an alternative framework by implementing Meadow Pedagogy—using highly visual, child-level geometric primitives to establish interpretable internal boundaries.
+Instead of hiding mathematical behavior behind un-governed parameters, our Geometric Brush Presets serve as explicit interpretability models that map exactly how deep neural layers transform representations:
+• 🐝 Honeycomb Tessellation Brush (Tessellation Bees): Implements hexagonal tiling layouts to partition latent spaces. In interpretability work, this replaces unpredictable semantic boundary shifts with fixed, deterministic coordinate grids that lock tracking metrics into predictable layout bins.
+• 🌀 Mandala Radial Ripple Brush (Mandala Cognition): Forces index-symmetric metric updates to ripple outward evenly from a central structural anchor under Lie-symmetrized derivatives. This proves how multi-source inputs (text, vision, audio) can achieve global geometric coherence without throwing out alignment tracking data.
+• 🌿 Meadow Spiral Warp Brush (Meadow Pedagogy): Calculates path-dependent orientation changes. This models sequence-to-sequence operations as continuous parallel transport along curves, providing an absolute trace log of how historical contextual boundaries evolve.
+• 🐐 Hyperbolic Hill Saddle Brush (Manifold Goats): Maps explicit saddle curvatures over the grid. This demonstrates how models can map hierarchical or cyclical symbolic networks into non-Euclidean spaces safely, bypassing the representation crowding errors that cause flat transformers to crash.
+
+⚠️ CRITICAL CODESPACE HARDWARE WARNING ⚠️
+
+🚨 Memory and CPU Threshold Limits: Compiling Phase 3 Lean 4 enclaves from scratch inside cloud-hosted containers like GitHub Codespaces can cause 100% CPU spikes and memory exhaustion due to Mathlib4.
+🛑 Mitigation Protocol: Pull pre-compiled binary allocation tokens first:
+bash
+cd verification/lean && lake exe cache get
+Use code with caution.
 
 📊 Development Status & Scaffolding
 
-Core components and file structures for Phase 1 and Phase 2 are organized as follows:
-• Environment & Core: Configured via pyproject.toml, canvas_core.py (curved manifold physics), and primitives.py (The Five Primitives implementation).
-• Validation: Tested via test_canvas.py and orchestrated using the root Makefile.
-ndh-canvas-engine/
-├── pyproject.toml
-├── Makefile
-├── src/ndh_canvas/
-│   ├── __init__.py
-│   ├── canvas_core.py
-│   └── primitives.py
-└── tests/test_canvas.py
+Core architecture comprises:
+• canvas_core.py: Riemann manifold physics and local Hessian collapse boundaries.
+• primitives.py: Barycentric grids and holonomy curves.
+• brush_presets.py: Geometric Brush Registry deforming metric tensors.
+• exporter.py: Lightweight serialization compression.
+• verification/lean/: Dependent type enclaves.
 
 ⚙️ Pipeline Orchestration
 
-Run the full verification gate locally via make all, or use sub-targets like make env, make format, and make test.
+Run the verification suite via:
+bash
+make all && ndh-paint
+Use code with caution.
+• make env: Installs dependencies.
+• make format: Enforces layout constraints.
+• make test: Runs Pytest verification.
+• make lean_build: Compiles Lean 4 with caching.
 
 Rigorous Mathematical Foundations
 
-The engine models the drawing field via continuous sub-manifolds, utilizing:
-1. Tessellation Bees (Hexagonal Tiling): Enforces spatial coordinates and bounds.
-2. Symplectic Conservation Loops: Preserves style-invariant volumes.
-3. 9D Radial Laplacian: Smooths coordinate anomalies and jitter.
-4. Apex Gradients: Steers coherent directional generation.
-5. Mandala Cognition: Governs index-symmetric metric evolution.
+The engine models an 80-dimensional Riemannian product space using apex gradients, Lie-symmetrized metric evolution, path-ordered holonomy clamping, and symplectic invariants. Complete proofs and formal derivations can be found directly within the repository source documentation.
+
+
+
