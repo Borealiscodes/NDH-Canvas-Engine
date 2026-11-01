@@ -7,11 +7,13 @@ under unified, absolute packaging import pathways.
 from ndh_canvas.canvas_core import NDHCanvasField
 from ndh_canvas.primitives import PaintingPrimitives
 from ndh_canvas.brush_presets import GeometricBrushPresets
+from ndh_canvas.exporter import NDHCanvasExporter
 
 __all__ = [
     "NDHCanvasField",
     "PaintingPrimitives",
     "GeometricBrushPresets",
+    "NDHCanvasExporter",
 ]
 
 __version__ = "1.0.0"
