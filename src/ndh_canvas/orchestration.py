@@ -3,11 +3,12 @@ import numpy as np
 from ndh_canvas.canvas_core import NDHCanvasField
 from ndh_canvas.primitives import PaintingPrimitives
 from ndh_canvas.brush_presets import GeometricBrushPresets
+from ndh_canvas.exporter import NDHCanvasExporter
 
 def run_engine():
     """
     Unified execution harness for the NDH-Canvas-Engine.
-    Simulates cross-modular stroke sequences across alternating geometric brush presets.
+    Cycles through geometric brush presets and exports the verified manifold state.
     """
     print("🎨 [NDH-CANVAS] Initializing continuous manifold architecture...")
     canvas = NDHCanvasField(resolution=256, dimensions=80)
@@ -22,12 +23,14 @@ def run_engine():
     ]
     
     print("\n🚀 Starting Multi-Preset Manifold Deformation Loop...")
+    last_brush_name = "None"
     
     for name, perturbation_field in brush_sequence:
         print(f"\n🖌️  [BRUSH] Activating profile: {name}...")
+        last_brush_name = name
         
         # 1. Compute apex directional vectors for the specific brush contour
-        apex_gradient_field = canvas.evaluate_apex_gradient(perturbation_field)
+        _ = canvas.evaluate_apex_gradient(perturbation_field)
         
         # 2. Check for local Hessian discontinuities before applying deformation
         collapse_mask = canvas.check_collapse_surface(perturbation_field)
@@ -46,11 +49,21 @@ def run_engine():
             print(f"🚨 [CRITICAL] Structural asymmetry detected in brush profile: {name}")
             sys.exit(1)
             
+    # 5. Serialize and export the final canvas state vector snapshot to disk
+    output_filename = "ndh_canvas_snapshot.json"
+    print(f"\n💾 [EXPORT] Writing stable state matrix to {output_filename}...")
+    
+    export_success = NDHCanvasExporter.export_canvas_to_json(
+        canvas, output_filename, active_brush_name=last_brush_name
+    )
+    
     print("\n📊 === FINAL NDH MANIFOLD VALIDATION REPORT ===")
     print(f" -> Resolution Substrate : {canvas.res} x {canvas.res}")
     print(f" -> Ambient Coordinates  : {canvas.dim}-Dimensional Product Space")
+    print(f" -> Export Operation     : {'SUCCESS' if export_success else 'FAILED'}")
     print("💎 [STATUS] All geometric presets validated. Drift neutrality verified completely.\n")
-    sys.exit(0)
+    
+    sys.exit(0 if export_success else 1)
 
 if __name__ == "__main__":
     run_engine()
